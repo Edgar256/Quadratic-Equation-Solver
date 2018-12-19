@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quadratic Expression</title>
+	<style>
+		body{
+			font-family: 'Open Sans',sans-serif;
+		    font-size: 1.2rem;
+		    line-height: 1.65;
+		}
+		input{
+			padding: 5px;
+		    border-radius: 7px;
+		    border: 1px solid #e5e5e5;
+		    font-size: 25px;
+		    text-align: center;
+		}
+		button{
+			width: 100%;
+		    margin: auto;
+		    padding: 8px;
+		    font-size: 18px;
+		    border-radius: 5px;
+		    border: 0px;
+		    color: #f8f3f3;
+		    background-color: #4e92df;
+		}
+		.mainWrapper{
+			margin: auto;
+		    width: 80%;
+		    display: -webkit-box;
+		    margin-top: 40px;
+		    margin-bottom: 40px;
+		}
+		.minWrapper{
+			width: 33.3%;
+			text-align: center;
+		}
+		.col-wd-4{
+			width: 25%;
+			text-align: center;
+		}
+	</style>
+	<script>
+		
+		function compute(){
+			var numA = parseFloat((document.getElementById("varA")).value);
+			var numB = parseFloat((document.getElementById("varB")).value);
+			var numC = parseFloat((document.getElementById("varC")).value);
+
+			/*var resultOne = ((-(numB)) + Math.sqrt((numB * numB) - (4 * numA * numC))) / (2 * numB);
+			var resultTwo = ((-(numB)) - Math.sqrt((numB * numB) + (4 * numA * numC))) / (2 * numB);*/
+			var complexNum = (numB * numB) - (4 * numA * numC)
+			var resultOne = ((-(numB) ) + Math.sqrt(complexNum)) / (2 * numB) ;
+			var resultTwo = ((-(numB) ) -  Math.sqrt(complexNum)) / (2 * numB) ;
+
+			document.getElementById("xOne").innerHTML = resultOne ;
+			document.getElementById("xTwo").innerHTML = resultTwo ;
+		}
+	</script>
+</head>
+<body>
+	<div class="mainWrapper">
+		<div class="minWrapper">
+			<div class="txtWrapper">Insert Value for a</div>
+			<div class="inputWrapper">
+				<input type="text" name="a" id="varA">
+			</div>
+		</div>
+		<div class="minWrapper">
+			<div class="txtWrapper">Insert Value for b</div>
+			<div class="inputWrapper">
+				<input type="text" name="a" id="varB">
+			</div>
+		</div>
+		<div class="minWrapper">
+			<div class="txtWrapper">Insert Value for c</div>
+			<div class="inputWrapper">
+				<input type="text" name="a" id="varC">
+			</div>
+		</div>
+	</div>
+	<div class="mainWrapper">
+		<div class="minWrapper"></div>
+		<div class="minWrapper">
+			<button onclick="compute()">Calculate</button>
+		</div>
+		<div class="minWrapper"></div>
+	</div>
+	<div class="mainWrapper">
+		<div class="col-wd-4"></div>
+		<div class="col-wd-4">X1 = <span id="xOne"></span> </div>
+		<div class="col-wd-4">X2 = <span id="xTwo"></span></div>
+		<div class="col-wd-4"></div>
+	</div>
+</body>
+</html>
