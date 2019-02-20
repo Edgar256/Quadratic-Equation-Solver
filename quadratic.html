@@ -48,14 +48,29 @@
 			var numB = parseFloat((document.getElementById("varB")).value);
 			var numC = parseFloat((document.getElementById("varC")).value);
 
-			/*var resultOne = ((-(numB)) + Math.sqrt((numB * numB) - (4 * numA * numC))) / (2 * numB);
-			var resultTwo = ((-(numB)) - Math.sqrt((numB * numB) + (4 * numA * numC))) / (2 * numB);*/
-			var complexNum = (numB * numB) - (4 * numA * numC)
-			var resultOne = ((-(numB) ) + Math.sqrt(complexNum)) / (2 * numB) ;
-			var resultTwo = ((-(numB) ) -  Math.sqrt(complexNum)) / (2 * numB) ;
+			/*var resOne = ((-(numB)) + Math.sqrt((numB * numB) - (4 * numA * numC))) / (2 * numB);
+			var resTwo = ((-(numB)) - Math.sqrt((numB * numB) + (4 * numA * numC))) / (2 * numB);*/
 
-			document.getElementById("xOne").innerHTML = resultOne ;
-			document.getElementById("xTwo").innerHTML = resultTwo ;
+			if(numA ===' ' || numB === ' ' || numC === ' '){
+				alert('Please enter all the values');
+			}else{
+				var compN = (numB * numB) - (4 * numA * numC)
+
+				console.log(Math.sqrt(compN));
+
+				
+				var resOne = (-numB + Math.sqrt(compN))/ (2*numA)
+				var resTwo = (-numB - Math.sqrt(compN))/ (2*numA)
+
+
+				/*var resOne = ((-(numB) ) + Math.sqrt(compN)) / (2 * numB) ;
+				var resTwo = ((-(numB) ) -  Math.sqrt(compN)) / (2 * numB) ;*/
+
+				document.getElementById("xOne").innerHTML = resOne ;
+				document.getElementById("xTwo").innerHTML = resTwo ;
+			}
+
+			
 		}
 	</script>
 </head>
@@ -64,19 +79,19 @@
 		<div class="minWrapper">
 			<div class="txtWrapper">Insert Value for a</div>
 			<div class="inputWrapper">
-				<input type="text" name="a" id="varA">
+				<input type="number" name="a" id="varA">
 			</div>
 		</div>
 		<div class="minWrapper">
 			<div class="txtWrapper">Insert Value for b</div>
 			<div class="inputWrapper">
-				<input type="text" name="a" id="varB">
+				<input type="number" name="a" id="varB">
 			</div>
 		</div>
 		<div class="minWrapper">
 			<div class="txtWrapper">Insert Value for c</div>
 			<div class="inputWrapper">
-				<input type="text" name="a" id="varC">
+				<input type="number" name="a" id="varC">
 			</div>
 		</div>
 	</div>
